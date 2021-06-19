@@ -10,7 +10,6 @@ The application, once completed, should meet the following criteria:
 4. It should have a way to view saved Gems, even after the browser window is refreshed (localStorage is a fine for this).
 
 Here's a few things we'll look for in our evaluation.
-
 1. Clean, well-organized code.
 2. Sensisble architecture choices that could scale well.
 3. A clean, functioning UI.

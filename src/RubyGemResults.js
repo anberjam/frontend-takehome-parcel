@@ -1,22 +1,19 @@
-import React, {useState, useEffect} from "react"
-import Search from "./Search"
+import React from "react"
 import EachRubyGem from "./EachRubyGem"
 
-function RubyGemResults () 
+function RubyGemResults ({results, savedGems, setSavedGems}) 
 {
-    const [query, setQuery] = useState("")
-    const [results, setResults] = useState([])
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/api/v1/search.json?query=${query}`)
-        .then(r=> r.json())
-        .then(r=>setResults(r))
-    }, [query])
+    const eachResult = results.map((result)=> <EachRubyGem key={result.name} name = {result.name} setSavedGems = {setSavedGems} savedGems = {savedGems}/>)
+
+
+
+
 
     return (
         <div>
-        <Search setQuery={setQuery}/>
-        <EachRubyGem results = {results} />
+
+   {eachResult}
         </div>
     )
 }

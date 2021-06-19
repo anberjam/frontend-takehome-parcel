@@ -1,30 +1,31 @@
 import React, {useState} from "react"
 
-function Search ({setQuery}) {
-    const [search, setSearch] = useState("")
+function Search ({setSearch}) {
+    const [query, setQuery] = useState("")
+
 
     function handleSearchTerm (event) {
-        setSearch(event.target.value)
+        setQuery(event.target.value)
     }
 
-    function whenSubmitted () {
+    function whenSubmitted (event) {
         event.preventDefault()
-        setQuery(search)
+        setSearch(query)
     }
 
     return (
         <div className = "form-group">
         <form onSubmit={whenSubmitted}>
-        <label htmlFor="search"> Search Here: </label>
+        <label htmlFor="search"> What are you looking for? </label>
         <input 
         id = "search" 
         type="text" 
-        placeholder="Search Ruby Gems" 
+        placeholder="Type Ruby Gem Name Here.." 
         onChange = {handleSearchTerm} 
-        value = {search} 
+        value = {query} 
         autoComplete="off">
         </input>
-        <button type="submit">Search</button>
+        <button type="submit">I'm Feeling Lucky!</button>
         </form>
         </div>
     )
