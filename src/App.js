@@ -16,7 +16,8 @@ function App () {
         fetch(`http://localhost:3000/api/v1/search.json?query=${search}`)
         .then(r=> r.json())
         .then(r=>setResults(r))
-    }, [search])
+        }, 
+      [search])
     
     
     return (
