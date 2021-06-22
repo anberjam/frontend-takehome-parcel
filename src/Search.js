@@ -25,7 +25,7 @@ function Search ({setSearch}) {
         value = {query} 
         autoComplete="off">
         </input>
-        <button type="submit">I'm Feeling Lucky!</button>
+        <button id="search" type="submit">I'm Feeling Lucky!</button>
         </form>
         </div>
     )

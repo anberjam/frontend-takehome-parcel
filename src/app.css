@@ -1,0 +1,66 @@
+body {
+  background: rgb(255, 243, 174);
+  font-family: Georgia;
+  margin: 0;
+  align: center;
+
+}
+
+h1#header {
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 50px;
+  border: solid;
+  background-color:aliceblue;
+  color: rgb(20, 20, 168);
+} 
+
+
+
+.tab-list {  
+  font-size: xx-large;
+  align-content: center;
+  padding-left: 25%;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  border: solid;
+  padding: 1%;
+  align-self: center;
+
+}
+
+.tab-list-active {
+  background-color: magenta;
+  border: solid;
+  padding: 1%;
+  align-self: center;
+
+}
+
+
+label {
+  font-style: italic;
+  color:rgb(20, 20, 168);
+}
+
+input#search {
+  height: 30px;
+  width: 300px;
+  margin: 8px;
+  border: 2px magenta;
+  font-size: large;
+
+}
+
+button#search {
+  height: 30px;
+  padding: 5px;
+  background-color: midnightblue;
+  color:rgb(255, 243, 174);
+  border: double white;
+}
+

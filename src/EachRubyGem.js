@@ -1,28 +1,33 @@
 import React, {useState} from "react"
 
 
-function EachRubyGem ({name, setSavedGems, savedGems}) {
+function EachRubyGem ({name, setSavedGems, savedGems, updateGemsSavedInLS}) {
 const [selected, setSelected] = useState(false)
 
 
 function handleSaveButton (name) {
     setSelected(true)
+
     setSavedGems([...savedGems, name])
+    updateGemsSavedInLS([...savedGems, name])
 
 }
 
 function handleUnsaveButton (name) {
     setSelected(false)
-    const updatedSavedGems = savedGems.map((gem)=> gem != name) 
+
+    const updatedSavedGems = savedGems.filter((gem)=> gem != name) 
     setSavedGems (updatedSavedGems)
+    updateGemsSavedInLS(updatedSavedGems)
+
 }
 
 
     return (
         <div>
             <ul>
-            <li>{name} </li>
-            {selected ? <button onClick = {handleUnsaveButton}> Unsave</button> : <button onClick = {handleSaveButton}> Save </button>}
+            {selected ? <button onClick = {() => handleUnsaveButton(name)}> Unsave</button> : <button onClick = {() => handleSaveButton (name)}>  Save </button>}
+            &nbsp;&nbsp;&nbsp;&nbsp;{name}
             
             </ul>
         </div>

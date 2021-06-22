@@ -1,10 +1,13 @@
 import React from "react"
+import SavedResultItem from "./SavedResultItem"
 
 function SavedResults ({savedGems}) {
-    console.log(savedGems)
+
+    const eachSave = savedGems.map((gem)=> <SavedResultItem key={gem} gem={gem} savedGems={savedGems}/> )
+
     return (
         <div>
-            Saved Results
+            {eachSave}
         </div>
     )
 }
