@@ -1,19 +1,15 @@
 import React from "react"
 import EachRubyGem from "./EachRubyGem"
 
-function RubyGemResults ({results, savedGems, setSavedGems, updateGemsSavedInLS}) 
-{
+function RubyGemResults ({results}) {
 
-    const eachResult = results.map((result)=> <EachRubyGem key={result.name} updateGemsSavedInLS={updateGemsSavedInLS} name = {result.name} setSavedGems = {setSavedGems} savedGems = {savedGems}/>)
-
-
-
+    const eachResult = results.map((result)=> <EachRubyGem key={result.name} name = {result.name}/>)
 
 
     return (
         <div>
 
-   {eachResult}
+            {eachResult}
         </div>
     )
 }

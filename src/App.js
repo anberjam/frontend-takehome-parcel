@@ -8,10 +8,8 @@ import app from "./app.css"
 
 
 function App () {
-    const [search,setSearch] = useState("")
+    const [search, setSearch] = useState("")
     const [results, setResults] = useState([])
-    const [savedGems, setSavedGems] = useState([])
-
   
 
     useEffect(() => {
@@ -20,32 +18,29 @@ function App () {
         .then(r=>setResults(r))
     }, [search])
     
-    function updateGemsSavedInLS (savedGems) {
-      localStorage.setItem("savedGems", JSON.stringify(savedGems))
-    }
-
-
+    
     return (
         <div>
-       <Header />
-       <div>
+          <Header />
+            <div>
 
-     <Tabs> 
-       <div label="Explore Ruby Gems"> 
+              <Tabs> 
+                <div label="Explore Ruby Gems"> 
          
-    <Search setSearch={setSearch}/>
-    <RubyGemResults updateGemsSavedInLS={updateGemsSavedInLS} results = {results} savedGems = {savedGems} setSavedGems = {setSavedGems}/>
-       </div> 
+                    <Search setSearch={setSearch}/>
 
-       <div label="My Saved Ruby Gems"> 
+                    <RubyGemResults results = {results}/>
+                </div> 
 
-    <SavedResults savedGems = {savedGems} setSavedGems = {setSavedGems}/>
+                <div label="My Saved Ruby Gems"> 
+
+                    <SavedResults />
       
-       </div> 
-     </Tabs> 
-    </div>
-    </div>  
-)
+                </div> 
+              </Tabs> 
+            </div>
+        </div>  
+    )
 
 }
 
